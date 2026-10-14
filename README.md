@@ -22,7 +22,8 @@ pnpm install
 This preset derives from
 [`preset-pnpm-monorepo`](https://github.com/shazhou-ww/preset-pnpm-monorepo).
 Its `.git-lineage.yaml` tracks that immediate parent. Run `git-lineage update`
-to merge later monorepo baseline changes.
+to merge later monorepo baseline changes. This preset documents its own
+capabilities and does not enumerate descendants.
 
 ## Architecture
 
