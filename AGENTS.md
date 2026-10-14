@@ -13,20 +13,20 @@
   dependencies on `workspace:*`.
 - Keep each workspace's build, lint, test, and typecheck scripts aligned with
   `turbo.json`.
-- Preserve the same-origin static asset and `/api/*` Worker routing described
-  in `README.md`.
+- Preserve the same-origin static asset and `/api/*` Worker routing described in
+  `README.md`.
 
 ## Skills
 
 - Manage project skills with `npx skills`.
-- Keep all project skills under `.agent/skills/<skill-name>/`, with each
-  skill's `SKILL.md` in its directory.
+- Keep all project skills under `.agent/skills/<skill-name>/`, with each skill's
+  `SKILL.md` in its directory.
 
 ## Authentication and deployment
 
 - Keep OAuth callback URLs, session handling, and protected API routes aligned;
   do not weaken server-side authorization.
-- Never commit `.dev.vars` or real credentials. Update only
-  `.dev.vars.example` when documenting required variables.
+- Never commit `.dev.vars` or real credentials. Update only `.dev.vars.example`
+  when documenting required variables.
 - Keep push deployment disabled by default. Do not deploy or enable production
   deployment unless explicitly requested.
