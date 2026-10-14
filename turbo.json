@@ -8,6 +8,10 @@
     "clean": {
       "cache": false
     },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "lint": {
       "outputs": []
     },

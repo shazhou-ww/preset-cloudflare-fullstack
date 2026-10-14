@@ -1,22 +1,24 @@
 {
-  "name": "preset-pnpm-monorepo",
+  "name": "preset-cloudflare-fullstack",
   "version": "0.0.0",
-  "description": "A strict TypeScript monorepo preset built with pnpm workspaces and Turborepo.",
+  "description": "A Cloudflare fullstack preset with React, Hono, and multi-provider OAuth.",
   "keywords": [
     "typescript",
-    "pnpm",
-    "monorepo",
-    "turborepo",
+    "cloudflare",
+    "workers",
+    "react",
+    "hono",
+    "oauth",
     "preset",
     "template"
   ],
-  "homepage": "https://github.com/shazhou-ww/preset-pnpm-monorepo#readme",
+  "homepage": "https://github.com/shazhou-ww/preset-cloudflare-fullstack#readme",
   "bugs": {
-    "url": "https://github.com/shazhou-ww/preset-pnpm-monorepo/issues"
+    "url": "https://github.com/shazhou-ww/preset-cloudflare-fullstack/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shazhou-ww/preset-pnpm-monorepo.git"
+    "url": "git+https://github.com/shazhou-ww/preset-cloudflare-fullstack.git"
   },
   "license": "MIT",
   "private": true,
@@ -29,6 +31,8 @@
     "build": "turbo run build",
     "check": "pnpm format:check && turbo run lint typecheck test build",
     "clean": "turbo run clean && node -e \"require('node:fs').rmSync('.turbo', { recursive: true, force: true })\"",
+    "deploy": "pnpm build && pnpm --filter @workspace/worker deploy",
+    "dev": "pnpm --filter @workspace/web build && turbo run dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "turbo run lint",
@@ -36,15 +40,28 @@
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
+    "@auth/core": "catalog:",
+    "@cloudflare/workers-types": "catalog:",
     "@eslint/js": "catalog:",
+    "@fontsource-variable/instrument-sans": "catalog:",
+    "@fontsource-variable/newsreader": "catalog:",
+    "@hono/auth-js": "catalog:",
     "@types/node": "catalog:",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
     "@vitest/coverage-v8": "catalog:",
     "eslint": "catalog:",
     "globals": "catalog:",
+    "hono": "catalog:",
     "prettier": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:",
-    "vitest": "catalog:"
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "wrangler": "catalog:"
   }
 }
