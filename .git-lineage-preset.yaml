@@ -1,0 +1,5 @@
+version: 1
+title: Cloudflare fullstack
+description:
+  Cloudflare starter with React, Hono, same-origin static assets, and Auth.js
+  authentication.
