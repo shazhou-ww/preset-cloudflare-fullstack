@@ -27,12 +27,14 @@
   "packageManager": "pnpm@11.22.0",
   "scripts": {
     "build": "turbo run build",
-    "check": "pnpm format:check && turbo run lint typecheck test build",
+    "check": "pnpm format:check && pnpm lint:release && pnpm test:release && turbo run lint typecheck test build",
     "clean": "turbo run clean && node -e \"require('node:fs').rmSync('.turbo', { recursive: true, force: true })\"",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "turbo run lint",
-    "test": "turbo run test",
+    "lint": "pnpm lint:release && turbo run lint",
+    "lint:release": "eslint scripts",
+    "test": "pnpm test:release && turbo run test",
+    "test:release": "node --test scripts/*.test.js",
     "typecheck": "turbo run typecheck"
   },
   "devDependencies": {
@@ -41,7 +43,10 @@
     "@vitest/coverage-v8": "catalog:",
     "eslint": "catalog:",
     "globals": "catalog:",
+    "github-ci-verify": "catalog:",
     "prettier": "catalog:",
+    "publint": "catalog:",
+    "semver": "catalog:",
     "turbo": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:",
