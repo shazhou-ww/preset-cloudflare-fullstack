@@ -24,8 +24,8 @@ catalog:
   hono: ^4.13.13
   prettier: ^3.9.10
   publint: ^0.3.25
-  react: ^19.3.0
-  react-dom: ^19.3.0
+  react: ^19.3.1
+  react-dom: ^19.3.1
   semver: ^7.8.5
   turbo: ^2.11.10
   typescript: ^6.0.3
